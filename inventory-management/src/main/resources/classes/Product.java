@@ -14,7 +14,12 @@ public class Product {
     private String productName, productDescription;
     private double price;
 
+    public Product(){
+
+    }
+
     public Product(long id, String productName, String productDescription, double price){
+        super();
         this.id = id;
         this.productName = productName;
         this.productDescription = productDescription;
