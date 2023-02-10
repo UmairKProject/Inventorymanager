@@ -32,40 +32,31 @@
     </nav>
     <div class = "container">
         <div class = "row">
-            <h1> List Products </h1>
+            <h1> List Users </h1>
         </div>
 
         <div class="row">
             <div class = "col-lg-3">
-                <a th:href = "@{/products/new}" class = "btn btn-primary btn-sm mb-3"> Add Product</a>
+                <a th:href = "@{/users/new}" class = "btn btn-primary btn-sm mb-3"> Add User</a>
             </div>
         </div>
         <table class= "table table-bordered table-striped">
             <thead class = "thead-dark">
                 <tr>
-                    <th>Product Name</th>
-                    <th>Product Price</th>
-                    <th>Product Description</th>
-                    <th>Product Stock</th>
+                    <th>User Email</th>
+                    <th>User Password</th>
                     <th>Actions</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr th:each = "product : ${products}">
-                    <td th:text = "${product.productName}"></td>
-                    <td th:text = "${product.productPrice}"></td>
-                    <td th:text = "${product.productDescription}"></td>
-                    <td th:text = "${product.productStock}"></td>
-                    <td>
-                        <a th:href="@{/products/edit/{id}(id=${product.id})}"
-                        class = "btn btn-primary">Edit</a>
-                        <a th:href="@{/products/{id}(id=${product.id})}"
-                        class = "btn btn-danger">Delete</a>
-                    </td>
+                <tr th:each = "user : ${users}">
+                    <td th:text = "${user.email}"></td>
+                    <td th:text = "${user.password}"></td>
                 </tr>
             </tbody>
         </table>
-    </div>    
+    </div>
+    
 </body>
 </html>

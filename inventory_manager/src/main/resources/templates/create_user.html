@@ -26,7 +26,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/users}">Users</a>
-            </li>            
+            </li>
             </ul>
         </div>
     </nav>
@@ -35,53 +35,31 @@
     <div class="container">
         <div class = "row">
             <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-                <h1 class = "text-center">Create a new product</h1>
+                <h1 class = "text-center">Create a new user</h1>
                 <div class = "card-body">
-                    <form th:action="@{/products}" th:object = "${product}" method="POST">
+                    <form th:action="@{/users}" th:object = "${user}" method="POST">
                         <div class = "form-group">
-                            <label>Product Name</label>
+                            <label>User Email</label>
                             <input
                             type = "text"
-                            name = "productName"
-                            th:field = "*{productName}"
+                            name = "email"
+                            th:field = "*{email}"
                             class = "form-control"
-                            placeholder = "Enter product name"
+                            placeholder = "Enter user email"
                             />
                         </div>
 
                         <div class = "form-group">
-                            <label>Product Price</label>
+                            <label>User Password</label>
                             <input
                             type = "text"
-                            name = "productPrice"
-                            th:field = "*{productPrice}"
+                            name = "password"
+                            th:field = "*{password}"
                             class = "form-control"
-                            placeholder = "Enter product price"
+                            placeholder = "Enter user password"
                             />
                         </div>
 
-                        <div class = "form-group">
-                            <label>Product Description</label>
-                            <input
-                            type = "text"
-                            name = "productDescription"
-                            th:field = "*{productDescription}"
-                            class = "form-control"
-                            placeholder = "Enter product description"
-                            />
-                        </div>
-
-                        <div class = "form-group">
-                            <label>Product Stock</label>
-                            <input
-                            type = "text"
-                            name = "productStock"
-                            th:field = "*{productStock}"
-                            class = "form-control"
-                            placeholder = "Enter product stock"
-                            />
-                        </div>
-                        
                         <div class = "box-footer">
                             <button type = "submit" class = "btn btn-primary">
                                 Submit

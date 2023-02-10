@@ -27,6 +27,7 @@ public class InventoryManagerApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// User user1 = new User("test@gmail.com", "password");
 		// userRepository.save(user1);
+		
 		// Product product1 = new Product("Cheap Coffee Beans", 2.50, "This is a bag of coffee beans.", 10);
 		// productRepository.save(product1);
 
