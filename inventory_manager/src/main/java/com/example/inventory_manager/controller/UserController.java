@@ -14,7 +14,7 @@ import com.example.inventory_manager.service.UserService;
 public class UserController {
 
     private UserService userService;
-    private String redirectString = "redirect:/users";;
+    private String redirectString = "redirect:/users";
 
     public UserController(UserService userService) {
         super();
@@ -37,8 +37,31 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public String saveProduct(@ModelAttribute("product") User user) {
+    public String saveUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
+        return redirectString;
+    }
+
+    @GetMapping("/users/edit/{id}")
+    public String editUserForm(@PathVariable int id, Model model) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "edit_user";
+    }
+
+    @PostMapping("/users/{id}")
+    public String updateUser(@PathVariable int id, @ModelAttribute("user") User user, Model model) {
+        User ogUser = userService.getUserById(id);
+        ogUser.setId(id);
+        ogUser.setEmail(user.getEmail());
+        ogUser.setPassword(user.getPassword());
+
+        userService.updateUser(ogUser);
+        return redirectString;
+    }
+
+    @GetMapping("/users/{id}")
+    public String deleteUser(@PathVariable int id) {
+        userService.deleteUserById(id);
         return redirectString;
     }
 }
