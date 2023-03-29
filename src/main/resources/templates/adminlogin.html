@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Login</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    
+        <link rel="stylesheet" href="../css/log.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/nav.js"></script>
+    </head>
+<body>
+    <section id="header">
+    <img
+            th:src="@{/images/logo.png}"
+            width="auto"
+            height="80"
+            class="logo d-inline-block align-top rounded-circle"
+            alt=""
+        />
+
+        <div>
+            <ul id="navbar">
+                
+                <li><a class="active"th:href="@{/}">Home</a></li>
+                <li>
+                    <a href="productsPage">Shop</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Machines</a></li>
+                        <li><a href="#">Syrups</a></li>
+                        <li><a href="#">Coffee</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Mugs</a></li>
+                    </ul>
+                </li>
+                <li><a href="login2">My Account</a></li>
+                <li><a href="aboutus">About</a></li>
+                <li><a href="#form-details">Contact</a></li>
+                <li id="admin"><a href="adminLogin">Admin</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+    <div class="bg"></div>
+    <div class="container">
+    <div class="bg"></div>
+    <div class="container">
+         <form th:action="@{/adminLogin}" method="post">
+            <h1>Admin Login</h1>
+            <div th:if="${error}">
+                <p th:text="${error}" style="color: red;"></p>
+            </div>
+            <div>
+                <input type="text" placeholder="Username" name = "username" id="username">
+            </div>
+            <div>
+                <input type="password" placeholder="Password" name = "password" id="password">
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <footer class="section-p1">
+        <div class="col contact">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> Aston University, Birmingham</p>
+            <p><strong>Phone:</strong> +44 1234567890</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            
+        </div>
+        <div class="col">
+            <img class="logo" src="img/logo.png" alt="">
+            
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/app.jpg" alt="">
+                <img src="img/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways </p>
+            <img src="img/pay.png" alt="">
+        </div>
+
+        
+    </footer>
+
+</body>
+</html>
